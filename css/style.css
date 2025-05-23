@@ -1,0 +1,937 @@
+/**************************************************************************************
+******************************ETIQUETAS BASICAS DEL HTML********************/
+/*Lo primero que hago es formatear todos los estilos que traigan por defecto las etiquetas
+del html y darle a los primeros contenedores sus estilos, es decir a las etiquetas propias
+del html como la cabecera y el cuerpo de esta*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    height:50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(62, 118, 209);
+    font-family:Arial, Helvetica, sans-serif;
+    z-index: 4;
+     
+ }
+
+main{
+    min-height: 100vh;
+    display:grid;
+    grid-template-rows: auto 1fr auto;  
+    width:100%;
+    
+}
+
+
+
+/****************************************************************************************
+*********************************** ESTILOS DE LOS TITULOS ********************************
+****************************************************************************************
+
+               (pongo los titulos y la listas desordenadas en mayusculas)
+
+*/
+ul, h2, h3, h4, h5{ 
+    text-transform: uppercase;
+}
+
+
+/*EL h3 como suele separar las marcas de los coches dentro de su categoria, le doy
+borde y fondo de caja para resaltar y asi el usuario podra apreciar mejor el cambio de
+marca de coche al navegar por la pagina*/
+h3{
+    border: 2px solid black;
+    background-color: rgb(135, 131, 131);
+    color:rgb(10, 2, 2);
+    width:80%;
+    padding:5px;
+   
+}
+/*************************ESTILOS DE LISTAS******************************************/
+
+/*ELIMINO LOS  ESTILOS DE LAS LISTAS QUE CONTIENEN LAS CAJAS DE LAS MARCAS DE LOS COCHES
+LAS CUALES CONTIENEN LAS CARACTERISTICAS DE CADA PRODUCTO Y LES DOY UN PEQUEÑO MARGEN
+PARA QUE ESTAS NO SE JUNTEN */
+
+li{
+    list-style: none;
+    margin:5px;
+}
+
+/*Le doy estilos a las listas dentro de listas ordenadas y a las cajas div de
+la clase= precio para que se pongan en mayuscula las primeras letras de las palabras*/
+
+ol li, .precio div{
+    text-transform:capitalize;
+}
+
+/******************************************************************************************
+******************************   BARRA DE NAVEGACION***************************/
+
+/*Le doy un display flex para que se posicionen en fila y tambien un gap para separarlos*/
+.nav-links{
+   
+    display:flex;
+    gap: 60px;
+}
+
+/*A los enlaces les quito el estilo que traen por defecto, los pongo en negrita y de color
+negro*/
+.nav-links a{  
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    
+}
+/*Le añado un color en blanco para cuando el enlace tenga el foco, para que el usuario
+aprecie bien a simple vista en en enlace que se encuentra*/
+
+.nav-links a:focus{
+    color:white;
+   
+}
+
+
+
+
+/**************************************************************************************************************************
+**************************************SECCION PORTADA****************************************/
+
+
+/*A la portada le pongo una imagen de fondo, le doy la altura deseada y una anchura del
+100% para que ocupe toda la pantalla. Tambien le doy un display flex para que el contenido
+se posicione debajo de la portada con el justify-content*/
+
+.section-portada{
+    background: url(../assets/images/fondo-portada.png)bottom/cover no-repeat;
+    height: 600px;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    text-align: center; 
+    justify-content: flex-end;
+
+}
+
+/*Al contenido le doy padding para que el texto no se junte con el borde del contenedor,
+ya que al contenedor le doy tambien un color de fondo y ademas pongo las letras en
+negrita para que se pueda leer con claridad */
+
+.contenido-portada{
+
+    padding:20px; 
+    background-color: #ebdcdcc1;
+    font-weight: bold;
+    
+}
+
+
+/*************************************COCHES DE  OCASION******************************
+**********************************************************************************
+***************************************************************************/ 
+
+
+
+/***************************************************************************************
+******ESTILOS DEL CONTENEDOR PADRE DE LAS PAGINAS INDEX Y GALERIA DE PRODUCTOS **********
+********************************************************************************/
+
+
+.contenedor-coches, .section-galeria{
+ 
+    display:flex;
+    flex-direction: column;
+    text-align: center; 
+    align-items: center;
+    gap:120px;   
+    margin:120px; 
+    width:80%;
+    height:auto;
+          
+}
+
+/*Le doy anchura al parrafo que aparece al principio del body; justo debajo del titulo.
+Con una clase que le añadi en el HTML*/
+
+.lorem{
+    width:60%;
+}
+
+
+
+/****************Le doy el tamaño a las imágenes; en general para las que se encuentran
+en la página del index, ya que más adelante tendré que añadir más imágenes y les tendré 
+que ir dando diferentes tamaños.**************/
+
+
+img{
+    height:200px;
+    width:400px;
+}
+
+
+/******************************* ESTILOS DE THAYRON****************************/
+
+/*Le doy al contenedor un display flex para que se coloque la descripcion al lado
+de la foto y ademas le justifico su contenedor para que se posicionen alrededor del
+ espacio que tiene el contenedor y no queden juntos, tambien le doy un color de fondo 
+ para que resalten cada uno de los contenedores.
+Le doy el mismo color de fondo a todas las cajas de los contenedores de las marcas*/
+
+.thayron1{
+    display:flex;
+    justify-content: space-around;
+    gap: 50px;
+    margin-top: 25px;
+    width:100%;
+    height:auto;
+    background-color: antiquewhite;
+    
+
+}
+/*El contenedor de la descripcion del thayron es el unico que lleva estos estilos, ya que 
+a todos los demas le doy otro tipo de estilos*/
+
+/*Los coloco en columna */
+
+.description{
+    
+    display:flex;
+    flex-direction:column;
+       
+       
+}
+
+/*Pongo en negrita la fuente de letra de algunas listas que se encuentran dentro de las 
+caracteristicas de la marca touareg mediante la clase que le di en el html*/
+
+.font-bold{
+    font-weight: bold;
+}
+
+
+/*******************************ESTOS ESTILOS SERAN LOS QUE TENGAN EN COMUN LAS DEMAS***** 
+**********************************************DESCRIPCIONES***********************/
+
+.description1{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+
+/************************ ESTILOS DE TOUAREG Y PORSCHE CAYENNE*********************************************
+**************************************************************************/
+/***********************A los dos contenedores padre de estas marcas***********************
+les aplico los mismos estilos; por ello pongo el codigo de las dos marcas juntas.
+Como son de dos modelos dentro de su caja contenedora de marcas; les aplico un display 
+flex para que se posicionen uno al lado del otro, asi se visualizan los dos modelos uno
+al lado del otro***********************************************...*/
+
+.touareg, .porsche  {
+    display:flex;
+    justify-content: center;
+    gap:60px;
+    
+}
+
+/*Dentro de los contenedores padre tenemos: dos cajas contenedoras a las que le doy
+propiedades del flex, posicionándolo en columna para que la descripción aparezca debajo
+de su imágen*/
+
+.touareg1, .porsche1{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    gap:20px;
+    background-color: antiquewhite;
+    
+}
+
+/*Le doy anchura y altura a los div dentro de la clase= precio que se encuentran 
+dentro de los contenedores del touareg y el posche para adaptarlo */
+.touareg1 .precio div, .porsche1 .precio div{
+    width: 120px;
+    height:auto;
+}
+
+
+/************ESTILOS EN COMUN PARA TODOS LAS CAJAS DE LA CLASE PRECIO Y SUS
+CAJAS  DIV DENTRO DEL CONTENEDOR DE  LOS PRECIOS*/
+
+/*A todos los precios les doy un display flex y a sus cajas div le añado borde para que
+se vean en forma de cuadricula con un color de fondo un poco mas oscuro que la caja padre*/
+.precio{
+    display:flex;
+    
+}
+
+.precio div{
+    border: 1.5px solid #373232;
+    background-color: rgb(229, 193, 147);
+    font-weight: bold;
+    
+}
+
+/******************************* TIGUAN Y AUDI (estilos con grid)*************************/
+
+/************************A estos modelos les he querido dar un grid*************************
+********************para que aparezcan uno debajo de otro y asi sucesivamente..*************
+************************ *************************/
+
+.contenedor-tiguan, .contenedor-audi{
+    display:grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap:120px;
+}
+
+/*Dentro de cada caja del grid tambien le doy display flex para que se posicionen
+las caracteristicas al lado de la imagen */
+
+.caja-grid{
+    display:flex;
+    flex-direction:column;
+    align-items:center ;
+    gap: 20px;
+   
+}
+
+/****ESTILOS PARA TODAS LAS CLASES description1  DE LOS CONTENEDORES que contienen GRID.
+Les doy las propiedades del display para ajustar el contenido en el centro
+Tambien le doy una anchura y una altura*****/
+
+.caja-grid .description1, .tiguan1 .description1{
+    display:flex;
+    align-items:center;
+    background-color: antiquewhite;
+    width:400px;
+    height: 160px;
+    
+}
+
+
+/*  PONGO LAS IMAGENES AL LADO DE SUS DESCRIPCIONES CON EL FLEX, Y A LAS DE LA CLASE
+im-right le cambio la posicion de los contenidos para que la imagen se visualice
+a la derecha */
+
+.img-left{
+    display:flex;
+
+}
+
+.img-right{
+    display:flex;
+    flex-direction: row-reverse;
+
+}
+
+/*LE DOY MARGEN POR ARRIBA A LAS CAJAS DE LAS  DESCRIPCIONES QUE SE ENCUENTRAN AL LADO
+DE LAS IMAGENES DE LOS GRID PARA QUE QUEDE EN EL CENTRO DE LA FOTO*/
+
+.img-right .description1, .img-left .description1{
+    
+    margin-top:20px;
+    
+}
+
+
+
+/*Le doy a TODAS las clases= precio que hay dentro de los grid un márgen por arriba para que
+no se vea separado de la imágen y también doy anchura para que ocupe el mismo ancho que
+ la imágen.*/
+
+.img-left ~.precio, .img-right~.precio{
+    margin-top: -25px;
+    width:400px;
+    
+}
+/*Tambien le doy margen por los lados a la clase= precio que son etiquetas hermanas de
+las clases = img-left y clases= img-right POR SEPARADO para que se posicionen justo debajo
+de su imagen. Las doy por separado ya que no tendran las mismas propiedades.*/
+
+.img-left ~ .precio{
+    margin-left:-400px;
+
+}
+
+.img-right ~ .precio{
+    margin-left: 400px;   
+    
+}
+
+/*Tambien le doy anchura a los div de la clase precio para que cojan el ancho que quiero*/
+.img-left ~ .precio div, .img-right~.precio div{
+    width: 400px;
+}
+
+
+
+/*a las imagenes que voy a poner a la izquiera del contenedor de las caracteristicas
+le doy un z-index para que el contenedor de las caracteristicas quede por debajo de la 
+imagen.*/
+
+.img-left img{
+    z-index: 3;
+}
+
+
+/***************************************************************************************
+**************************************NUESTROS PRODUCTOS / GALERIA DE FOTOS************************
+***************************************************************************************/
+
+
+
+/********Le doy un margen por arriba al contenedor padre de la galeria de fotos, 
+*******para que no quede por debajo del header****************** */
+
+.section-galeria{
+    margin-top:130px;
+
+}
+
+
+/*LE CAMBIO EL TAMAÑO DE LAS FOTOS DE LA GALERIA EN LA PAGINA DE NUESTROS PRODUCTOS;
+PARA QUE APAREZCAN UN POCO MAS PEQUEÑA QUE EN LAS DEL INDEX*/
+
+.caja-img img{
+    height:200px;
+    width:300px;
+}
+/*Al titulo con la clase = titulo-dif le doy una anchura del 100% para que coja
+toda su anchura */
+
+.titulo-dif{
+    width: 100%;
+}
+
+/*Aplico a las cajas contenedoras hijas las propiedades del flex y le doy anchura */
+.contenedor-img{
+    display:flex;
+    flex-direction: column;
+    gap:40px;
+    width: 80%;
+}
+
+/*A la caja contenedora con clas = caja-img; le doy un display flex
+para que se vean en fila y ademas le pongo en auto la barra de scroll para que cuando sea 
+necesario aparezca la barra de desplazamiento; de esta manera las imágenes se podrán
+ver bien sin que perjudique el tamaño de mi página*/
+
+.caja-img{
+    display:flex;
+    gap:10px;
+    overflow:auto;
+    
+}
+
+
+
+
+/********************************************************************************************
+**********************************FORMULARIO DE LA PAGINA PRESUPUESTO****************
+**********************************************************************************/
+
+
+
+/**PONGO LA LETRA EN NEGRITA DE LOS LABEL**/
+
+label{
+    font-weight: bold;
+}
+
+
+/*LE DOY LOS MISMOS ESTILOS A LOS CONTENEDORES PADRE DEL FORMULARIO Y DEL CONTACTO*/
+
+
+.formulario, .contacto{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    width:80%;
+    gap:30px;
+    margin: 150px auto;
+    background-color:antiquewhite;
+    padding: 20px;
+}
+
+/*A la caja que contiene lo que viene siendo el formulario le doy propiedades del
+flex; los posiciono y le doy espaciado entre contenido*/
+.formulario form{
+    display:flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+/*Le doy un poco de margen interno (padding) a los input y al textarea para que no se
+junte el contenido que va a escribir el usuario con las lineas de su caja y asi, se vea 
+mas limpio y claro */
+input, textarea{
+    padding:5px;
+}
+
+/*Le doy márgen por arriba a los label y a la política de privacidad para separarlos
+de los contenidos que tienen por encima*/
+
+label, .politica-priv{
+    margin-top:30px;
+}
+
+/*le doy tamaño al recuadro del mensaje ya que lo correcto es hacerlo desde el css y no 
+del html*/
+textarea{
+    height: 120px;
+    width:300px;
+}
+
+
+/*DIRECCION EN LA QUE SE VAN A ENCONTRAR LOS BOTONES DE BORRAR Y ENVIAR NUESTRO FORMULARIO
+Posiciono los botones con las propiedades del flex*/
+.botones{
+    display:flex;
+    justify-content: flex-end;
+    margin:20px;
+    gap:10px;
+}
+
+
+
+/**********************************************************************************************
+**********************************PIE DE PAGINA*****************************/
+/*Le pongo el mismo color de fondo que el header, una anchura del 100% para que ocupe
+toda la pantalla y con las propiedades del flex alineo al centro su contenido*/
+footer{
+    background-color:rgb(62, 118, 209);
+    height:auto;
+    width:100%;
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:30px;
+    padding:15px;
+    
+    
+}
+
+/*LAS REDES SOCIALES DE NUESTRA PAGINA LE DOY PROPIEDADES DEL FLEX PARA QUE SE COLOQUEN
+UNA AL LADO DE OTRA*/
+.redes-sociales{
+    display:flex;
+
+}
+
+.logo{
+   
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:0px 40px;
+}
+/*Tamaño para las imágenes de los logotipos de las redes sociales */
+.logo a img{
+    height: 40px;
+    width:40px;
+
+}
+
+/*Convierto en negrita los párrafos que quiero que se conviertan como tal,
+en su caso he puesto: los párrafos del footer, los párrafos de los logos de las redes
+sociales y por último; los párrafos que aparecen en la página de contacto;
+también añado ya lo que quiero convertir de la página de contacto en negrita, ya
+que como son las mismas propiedades aprovecho código.*/
+
+footer p, .logo p ,.contacto p{
+    font-weight: bold;
+}
+
+/*Hago desaparecer el check-menu y el label-chek para que no se muestren en pantalla 
+grande ya que estos son para pantallas mas pequeñas que añadiré a continuacién en las
+mediaqueris*/
+
+.check-menu{
+    display:none;
+}
+
+.label-check{
+    display:none;
+}
+
+
+/******************************************************************************************
+*******************************AÑADO LAS MEDIAQUERIS PARA HACER LA PAGINA RESPONSIVE*********
+**********************************************************************************************/
+
+/*********************************************************************************
+********************************MEDIDAS PARA TABLET  O PANTALLAS MEDIANAS**********
+**************************************************************************************/
+
+@media (max-width: 991px){
+
+
+    .section-portada{
+        max-width:991px;
+        
+    }
+
+
+/*LE doy mágen al contenido de la portada para que no se pege a los bordes*/
+
+    .contenido-portada{
+        margin: 5% 5%;
+    }
+
+/*Le cambio el tamaño a las imágenes para que se hagan más pequeña*/
+
+/*iMAGENES DEL INDEX*/
+    img{
+        width: 200px;
+        height: 100px;
+    }
+/*IMAGENES DE PRODUCTOS*/
+    .caja-img img{
+        height: 100px;
+        width:150px;
+    }
+
+
+    /*LE PONGO UN MÁRGEN INFERIOR ENTRE LOS CONTENIDOS DEL CONTENEDOR PRINCIPAL DEL INDEX*/
+
+    .contenedor-coches{
+        gap: 80px;
+    }
+
+  
+    /*Pongo todos los contenidos que estaban en display flex en modo columna
+    para que se visualicen mejor en el modo de pantalla mediana*/
+
+   .thayron1, .touareg, .img-left, .img-right, .touareg1, .porsche, .porsche1
+   {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+   /*Disminuyo la separación entre contenidos tanto de la sección de nuestros productos
+   o galería y del contenedor del Thayron*/
+   
+   .thayron1, .section-galeria{
+    gap:10px;
+   }
+
+/*Le doy anchura al contenedor thayron*/
+   .thayron{
+    width:70%;
+   }
+
+
+/*Le quito los márgenes que tenían anteriormente los precios del grid, hermanos de
+img-left y img-right; y además, le doy márgen por arriba para que no se separen mucho de 
+los otros contenedores y le doy anchura para que se adapte al contenedor padre*/
+
+   .img-left~.precio, .img-right ~.precio{
+    margin:0;
+    margin-top: -35px;
+    width:500px;
+   }
+  
+/*Le doy el mismo color de fondo a las descripciones de la caja-grid y a la caja-grid;
+ya que anteriormente la descripcion me aparecia mas oscura y lo que viene
+siendo el contenedor principal no tenía fondo: aparecía en blanco al quitarle el
+display flex a este.*/
+
+   .caja-grid, .caja-grid .description1{
+    background-color: antiquewhite;
+   }   
+
+
+/******ESTILOS PARA LA PÁGINA DE NUESTROS PRODUCTOS RESPONSIVE*****/
+
+/*Le doy estilos a la sección de la galería para que se me posicione en el medio
+con su márgen*/
+    .section-galeria{
+        width: 80%;
+        max-width:991px;
+    }
+
+    /*Al contenedor de las imágenes: Alineo el contenido en el centro*/
+    .contenedor-img{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 60px 0;
+    }
+/*Le doy anchura al contenedor de la imágen y al de la descripción*/
+    .caja-img, .description-img{
+        width: 60%;
+ }
+/*PIE DE LA PAGINA*/
+
+/*LE disminuyo la separación entre elementos del footer y de los logos*/
+    footer{
+        gap:10px;
+    }
+
+   .logo{
+        margin: 0 10px;
+
+   }
+
+/********************MENÚ DE NAVEGACIÓN PARA PANTALLAS MEDIANAS*******/
+/*Le cambio el menú de navegaciún para que no se apelotonen los enlaces de las páginas
+y les hago un menú hamburguesa para que los enlaces aparezcan al pinchar la imágen que he
+añadido al label en el html********/
+
+    .check-menu{
+        display:none;
+    }
+
+    .label-check{
+        display:block;
+        justify-content: center;
+    }
+/*Cambio el tamaño de las imágenes que aparecen en los label*/
+    .label-check img{
+        width: 40px;
+        height: 40px;
+        margin-bottom:30px;
+    }
+
+/*Cambio las características de los enlaces*/
+    .nav-links{
+        display:none;
+        flex-direction: column;
+        position:absolute;
+        top:100%;
+        width:100%;
+        background-color:#618acd ;
+        gap:0;
+        
+    }
+
+    .nav-links a{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height:40px;
+        width:100%;
+    }
+
+    .nav-links a:hover{
+        background-color: #7999ce;
+        color:aliceblue;
+    }
+
+    .check-menu:checked + .nav-links{
+        display:flex;
+    }  
+   
+
+}
+
+
+
+
+/******************************************************************************************
+*************************MEDIDAS PARA PANTALLAS MOVILES*********************************
+***********************************************************************************/
+
+@media (max-width: 480px) {
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+ /*Le indico el maximo de anchura para el pie y la cabecera*/
+    header, footer{
+        max-width: 480px;
+    }
+
+    header{
+        display:flex;
+        justify-content: center;
+        gap: 120px;
+    }
+/*Le doy un tamaño de fuente mas pequeño del que trae el h1 por defecto*/
+    h1{
+        font-size: 1.5em;
+    }
+
+
+
+/*Cambio el contenido de la portada de posición, la cambio arriba para que se lea mejor
+Y le doy la altura que quiero y una anchura del 100%*/
+    .section-portada{
+        
+        width: 100%;
+        height: 400px;
+        display:flex;
+        justify-content: flex-start;
+    }
+/*Ajusto el contenido de la portada a su contenedor*/
+  
+    .contenido-portada{
+        width:55%;
+        margin-top: 70px;
+        padding:0;
+        
+    }
+/*Le cambio los márgenes al contenedor principal del index para que se adapte*/
+    .contenedor-coches{
+       
+        width: 50%;
+        gap: 40px;
+        margin-left: 45px;
+        margin-top: 40px;
+
+    }
+/*Tambien le cambio las medidas a las imagenes*/
+    img{
+        width:150px;
+        height: 80px;
+
+    }
+
+
+
+/*Le doy una anchura al contenedor del touareg*/
+    .touareg1, .porsche1{
+        width:70%;
+    }
+
+    .precio{
+        width:100%;
+    }
+/*Le doy las propiedades del flex a los contenedores con estilos del grid para que estos
+se pongan en el centro colocados y le cambio la separacion entre ellos */
+     .contenedor-tiguan, .contenedor-audi{
+
+        display:flex;
+        flex-direction: column;
+        gap: 80px;
+
+    }
+/*Le doy anchura del contenedor de audi*/
+    .contenedor-audi, .contenedor-tiguan{
+        width:100%;
+    }
+  
+/*A las descripciones de los contenedores del grid le justifico el contenido al centro,
+le doy anchura y le pongo el mismo color de fondo que a su contenedor padre */
+
+    .img-left .description1, .img-right .description1{
+        display:flex;
+        justify-content: center;
+        width:70%;
+        background-color: antiquewhite;
+    }
+
+
+/*LE doy anchura a los precios de estos*/
+    .img-left ~.precio, .img-right ~.precio{
+              
+        display:flex;
+        align-items: center;
+        width: 320px;
+        margin-top: 5px;
+    }
+/*Y a los div dentro de sus precios les quito el márgen que le había dado anteriormente*/
+    .img-left ~.precio div, .img-right ~.precio div{
+        margin-left: 0;    
+     
+       
+    }
+
+    
+
+    /*****************************NUESTROS PRODUCTOS******************************/
+
+    /*Disminuyo las imagenes que hay dentro de la clase caja-img*/
+
+    .caja-img img{
+        width: 75px;
+        height: 50px;
+        
+    }
+
+/*Le doy anchura y margen al contenedor de productos para centrarlo*/
+
+    .section-galeria{
+        
+        width : 60%;
+        margin: 100px 70px;
+
+    }
+
+    /*Le pongo margen para disminuirlo, ya que anteriormente tenia mas margen*/
+
+    .contenedor-img{
+        margin: 30px 0;
+    }
+
+
+/**********FOOTER*** Le disminuyo las medidas a las imagenes que se encuentran en los
+enlaces dentro de la clase logo; es decir, las imagenes de las redes sociales */
+    .logo a img{
+        width: 30px;
+        height: 30px;
+    }
+
+
+/***************MENU DE NAVEGACION PARA PANTALLAS PEQUEÑAS*******************
+Le escondo el menu de navegacion y hago que aparezca con el checkbox solo cuando
+este clickado este a traves de la imagen añadida al label*/
+
+    .check-menu{
+        display:none;
+    }
+
+    .label-check{
+        display:block;
+        justify-content: center;
+    }
+
+    .label-check img{
+        width: 30px;
+        height: 30px;
+    }
+/*Doy los estilos a la barra de navegacion para que se añadan cuando esta aparezca*/
+
+    .nav-links{
+        display:none;
+        flex-direction: column;
+        position:absolute;
+        top:100%;
+        right:0;
+        width:100%;
+        background-color:#618acd ;
+        gap:0;
+        
+    }
+
+    .nav-links a{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height:40px;
+        width:100%;
+    }
+/*Tambien le doy un color de fondo mas claro para que resalte cuando se pasa el 
+raton por encima de los enlaces y otro*/
+    .nav-links a:hover{
+        background-color: #7999ce;
+        color:aliceblue;
+    }
+
+    .check-menu:checked + .nav-links{
+        display:flex;
+    }  
+}
