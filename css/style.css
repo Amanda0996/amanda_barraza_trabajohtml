@@ -113,8 +113,8 @@ se posicione debajo de la portada con el justify-content*/
 
 .section-portada{
     background: url(../assets/images/fondo-portada.png)bottom/cover no-repeat;
-    height: 600px;
-    width:100%;
+    height: 100vh;
+    width:auto;
     display:flex;
     flex-direction: column;
     text-align: center; 
@@ -127,12 +127,16 @@ ya que al contenedor le doy tambien un color de fondo y ademas pongo las letras 
 negrita para que se pueda leer con claridad */
 
 .contenido-portada{
-
-    padding:20px; 
+    width: 80%; 
+    height: auto;
+    margin: 10px auto;
+    padding: 20px; 
     background-color: #ebdcdcc1;
     font-weight: bold;
     
+    
 }
+
 
 
 /*************************************COCHES DE  OCASION******************************
@@ -577,6 +581,8 @@ mediaqueris*/
 
 
     .section-portada{
+        display:flex;
+        justify-content: flex-start;
         max-width:991px;
         
     }
@@ -584,9 +590,10 @@ mediaqueris*/
 
 /*LE doy mágen al contenido de la portada para que no se pege a los bordes*/
 
-    .contenido-portada{
-        margin: 5% 5%;
-    }
+   .contenido-portada{
+        margin: 80px auto;
+        
+     }
 
 /*Le cambio el tamaño a las imágenes para que se hagan más pequeña*/
 
@@ -771,18 +778,16 @@ añadido al label en el html********/
 Y le doy la altura que quiero y una anchura del 100%*/
     .section-portada{
         
+        background: url(../assets/images/fondo-portada.png)bottom/cover no-repeat;
+        height: 500px;
         width: 100%;
-        height: 400px;
-        display:flex;
-        justify-content: flex-start;
+      
     }
 /*Ajusto el contenido de la portada a su contenedor*/
   
     .contenido-portada{
-        width:55%;
-        margin-top: 70px;
-        padding:0;
-        
+        width: 50%;
+        margin: 60px 50px;
     }
 /*Le cambio los márgenes al contenedor principal del index para que se adapte*/
     .contenedor-coches{
