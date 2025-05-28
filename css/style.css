@@ -150,14 +150,14 @@ negrita para que se pueda leer con claridad */
 ********************************************************************************/
 
 
-.contenedor-coches, .section-galeria{
+.section-coches, .section-galeria{
  
     display:flex;
     flex-direction: column;
     text-align: center; 
     align-items: center;
     gap:120px;   
-    margin:120px; 
+    margin:100px; 
     width:80%;
     height:auto;
           
@@ -611,7 +611,7 @@ mediaqueris*/
 
     /*LE PONGO UN MÁRGEN INFERIOR ENTRE LOS CONTENIDOS DEL CONTENEDOR PRINCIPAL DEL INDEX*/
 
-    .contenedor-coches{
+    .section-coches{
         gap: 80px;
     }
 
@@ -752,85 +752,81 @@ añadido al label en el html********/
 
 @media (max-width: 480px) {
 
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-    }
- /*Le indico el maximo de anchura para el pie y la cabecera*/
-    header, footer{
-        max-width: 480px;
-    }
-
-    header{
-        display:flex;
-        justify-content: center;
-        gap: 120px;
-    }
 /*Le doy un tamaño de fuente mas pequeño del que trae el h1 por defecto*/
     h1{
         font-size: 1.5em;
     }
 
 
+/*Cambio el estilo del grid por flex al main y los posiciono en columna*/
+    main{
+        display:flex;
+        flex-direction: column;
 
-/*Cambio el contenido de la portada de posición, la cambio arriba para que se lea mejor
-Y le doy la altura que quiero y una anchura del 100%*/
+    }
+
+
+/*Le doy altura a la portada para que se adapte a las pantallas pequeñas*/
     .section-portada{
         
-        background: url(../assets/images/fondo-portada.png)bottom/cover no-repeat;
         height: 500px;
-        width: 100%;
-      
-    }
-/*Ajusto el contenido de la portada a su contenedor*/
-  
-    .contenido-portada{
-        width: 50%;
-        margin: 60px 50px;
-    }
-/*Le cambio los márgenes al contenedor principal del index para que se adapte*/
-    .contenedor-coches{
-       
-        width: 50%;
-        gap: 40px;
-        margin-left: 45px;
-        margin-top: 40px;
+        }
 
+
+        /*Ajusto el contenido de la portada para que se adapte*/
+    .contenido-portada{
+        width: 90%;
+       
+    }    
+
+/*LE doy margenes al contenedor padre de la pagina del index para que se adapte
+a la pantalla pequeña*/
+    .section-coches{
+    
+        margin: 50px 40px;
     }
-/*Tambien le cambio las medidas a las imagenes*/
+
+/*Le cambio las medidas a las imagenes para que se adapten a pantalla pequeña*/
     img{
         width:150px;
         height: 80px;
 
     }
+/*Le doy anchura al contenedor del volkswagen thayron*/
 
-
-
-/*Le doy una anchura al contenedor del touareg*/
-    .touareg1, .porsche1{
-        width:70%;
+    .thayron{
+        width: 100%;
     }
 
+
+
+/*Le doy anchura al contenedor del touareg y del porsche*/
+/*Y tambien les doy un margen por arriba a cada uno de los contenedores
+para que no se junten*/
+    .touareg1, .porsche1{
+        width:70%;
+        margin-top: 20px;
+    }
+
+/*Doy a los precios una anchura para que se adapten al contenedor padre*/
     .precio{
         width:100%;
     }
-/*Le doy las propiedades del flex a los contenedores con estilos del grid para que estos
-se pongan en el centro colocados y le cambio la separacion entre ellos */
-     .contenedor-tiguan, .contenedor-audi{
 
+/*Cambios en los contenedores del volkswagen tiguan y del audi a un display flex
+con posicion en columna y les doy anchura para que se adapten */
+     .contenedor-tiguan, .contenedor-audi{
+        
         display:flex;
         flex-direction: column;
-        gap: 80px;
+        width: 100%;
+        
 
     }
-/*Le doy anchura del contenedor de audi*/
-    .contenedor-audi, .contenedor-tiguan{
-        width:100%;
-    }
-  
-/*A las descripciones de los contenedores del grid le justifico el contenido al centro,
-le doy anchura y le pongo el mismo color de fondo que a su contenedor padre */
+
+/*A las descripciones de estos contenedores mencionados anteriormente, le justifico 
+el contenido al centro con las propiedades del flex, le doy anchura del 70% y le
+ pongo el mismo color de fondo que a su contenedor padre */
 
     .img-left .description1, .img-right .description1{
         display:flex;
@@ -840,7 +836,9 @@ le doy anchura y le pongo el mismo color de fondo que a su contenedor padre */
     }
 
 
-/*LE doy anchura a los precios de estos*/
+/*LE doy anchura a los precios de estos (de los tiguan y de los audi para que se
+adapten al contenedor padre), alineo el contenido al centro y tambien le doy
+un pequeño margen por arriba para que no se junten con las descripcion*/
     .img-left ~.precio, .img-right ~.precio{
               
         display:flex;
@@ -848,18 +846,13 @@ le doy anchura y le pongo el mismo color de fondo que a su contenedor padre */
         width: 320px;
         margin-top: 5px;
     }
-/*Y a los div dentro de sus precios les quito el márgen que le había dado anteriormente*/
-    .img-left ~.precio div, .img-right ~.precio div{
-        margin-left: 0;    
-     
-       
-    }
 
     
 
     /*****************************NUESTROS PRODUCTOS******************************/
 
-    /*Disminuyo las imagenes que hay dentro de la clase caja-img*/
+    /*Disminuyo las imagenes que hay dentro de la clase caja-img de la pagina
+    de nuestros productos*/
 
     .caja-img img{
         width: 75px;
@@ -871,23 +864,35 @@ le doy anchura y le pongo el mismo color de fondo que a su contenedor padre */
 
     .section-galeria{
         
-        width : 60%;
-        margin: 100px 70px;
+        width : 80%;
+        margin: 100px 40px;
 
     }
 
-    /*Le pongo margen para disminuirlo, ya que anteriormente tenia mas margen*/
+    /*Le pongo margen al contenedor de las imágenes para disminuirlo, ya que 
+    anteriormente tenia mas margen*/
 
     .contenedor-img{
         margin: 30px 0;
     }
 
 
-/**********FOOTER*** Le disminuyo las medidas a las imagenes que se encuentran en los
-enlaces dentro de la clase logo; es decir, las imagenes de las redes sociales */
+/**********FOOTER******
+ Le disminuyo las medidas a las imagenes que se encuentran en los
+enlaces dentro de la clase logo; es decir, las imagenes de las redes sociales
+ */
     .logo a img{
         width: 30px;
         height: 30px;
+    }
+
+    /*Pongo las redes sociales en columna con las propiedades del flex.
+    Y doy espaciado entre los elementos del contenedor*/
+
+    .redes-sociales{
+        display:flex;
+        flex-direction: column;
+        gap: 20px;         
     }
 
 
